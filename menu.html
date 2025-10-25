@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Restaurants & Menu</h1>
+  <ul>
+    <li>
+      Pizza Place - Margherita Pizza <button onclick="addToCart('Margherita Pizza')">Add to Cart</button>
+    </li>
+    <li>
+      Burger House - Cheese Burger <button onclick="addToCart('Cheese Burger')">Add to Cart</button>
+    </li>
+  </ul>
+  <br>
+  <a href="cart.html">Go to Cart</a>
+
+  <script>
+    function addToCart(item) {
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      cart.push(item);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(item + " added to cart!");
+    }
+  </script>
+</body>
+</html>
